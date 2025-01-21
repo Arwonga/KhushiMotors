@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushi Motors Dealership</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <style>
+        /* General styling for body and header */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+header {
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+    background-image: linear-gradient( to left, #e6661c, #333, #ffff);
+    height: 400px;
+}
+h1 {
+    margin: 0;
+    font-size: 3em;
+    margin-top: 10%;
+    text-align: center;
+    text-underline-offset: 0.5em;
+    text-decoration: underline;
+    text-decoration-color: #ff8c00;
+    
+    
+}
+
+.drive {
+    color: #ff8c00;
+
+}
+
+p {
+    font-size: 1.8em;
+    font-family: 'Dancing Script', cursive;  /* Add the Dancing Script font */
+    font-size: 1.8em;  /* Adjust font size as needed */
+    color: #ff8c00;  /* Change color if desired */
+    font-weight: 400;  /* Set the weight to normal for a light, elegant feel */
+}
+
+/* Content section */
+.content {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    font-size: 2em;
+    color: #333;
+}
+h3 {
+    font-size: 2em;
+    color: #333;
+    text-underline-offset: 0.5em;
+    text-decoration: underline;
+    text-decoration-color: #ff8c00;
+    
+}
+.p2 {
+    width: 50%;
+    text-align: center;
+    margin: 0;
+    padding: auto;
+    font-size: 1.8;
+}
+.half {
+    color: #ffffff;
+    width: 50%;           
+    align-items: center;       
+    text-align: center;
+    padding: 20px; 
+    font-size: 1.4em;
+    margin-left: 25%;
+
+
+}
+.cta-button {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff6a00;
+}
+
+/* Car image background */
+.car-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensures background stays behind content */
+    width: 100vw; /* Adjust to your desired size */
+    height: auto;
+    
+}
+
+/* Navigation Bar styling */
+.p1 {
+    font-family: 'Dancing Script', cursive;  /* Add the Dancing Script font */
+    font-size: 1.8em;  /* Adjust font size as needed */
+    color: #ffffff;  /* Change color if desired */
+    font-weight: 400;  /* Set the weight to normal for a light, elegant feel */
+}
+.navbar {
+    background-color: #333;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Keep it on top of other elements */
+    margin-top: 3%;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #ff8c00;
+    color: #fff;
+}
+.animated-car {
+    width: 100%;
+    height: auto;
+}
+
+/* Animation for hovering effect */
+@keyframes hoverAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+    50% {
+        transform: translate(-45%, -45%) scale(1.1) rotate(15deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+}
+.featured {
+    color: #ff8c00;
+}
+.image-container {
+    display: flex;            /* Enables flexbox layout */
+    justify-content: space-evenly; /* Distributes space evenly between items */
+    align-items: center;      /* Centers images vertically if needed */
+    gap: 80px;                /* Sets a fixed space between images */
+    height: 250px;
+    margin-bottom:7em ;
+    margin-top: 4em;
+}
+.image-container1 {
+    display: flex;            /* Enables flexbox layout */
+    justify-content: space-evenly; /* Distributes space evenly between items */
+    align-items: center;      /* Centers images vertically if needed */
+    gap: 80px;                /* Sets a fixed space between images */
+    height: 250px;
+    margin-bottom: 7em;
+}
+
+.image-container2 {
+    display: flex;            /* Enables flexbox layout */
+    justify-content: space-evenly; /* Distributes space evenly between items */
+    align-items: center;      /* Centers images vertically if needed */
+    gap: 80px; 
+    height: 250px;               /* Sets a fixed space between images */
+}
+
+.image-container5 {
+    display: flex;
+    align-items: center;
+    height: auto;
+    gap: 75px;
+    width: 1200px;
+}
+.image-container5 img {
+    width: 100px;
+    height: 100px;
+    opacity: 0;    /* Initially hide the image */
+    transform: scale(0.5);  /* Make the image start smaller */
+    animation: popUp 15s ease-out forwards;  /* Apply the animation */
+}    
+
+/* Animation for the pop-up effect */
+@keyframes popUp {
+    0% {
+        opacity: 0;             /* Start as invisible */
+        transform: scale(0.5);  /* Start smaller */
+    }
+    50% {
+        opacity: 0.7;           /* Halfway through, start fading in */
+        transform: scale(1.05); /* Slightly larger than the final size */
+    }
+    100% {
+        opacity: 1;             /* Fully visible */
+        transform: scale(1);    /* Final size */
+    }
+}
+
+.image-container1 img {
+    width: 200px;
+    height: 200px;
+}
+
+.image-container2 img {
+    width: 200px;
+    height: 200px;
+}
+
+.image-container img {
+    width: 200px;             /* Adjust the size of the images */
+    height: 200px;             /* Maintain aspect ratio */
+}
+
+.image-item {
+    text-align: center;         /* Center-align the text below each image */
+    width: 200px;               /* Set width for each image-item block */
+}
+
+.caption {
+    margin-top: 10px;           /* Space between image and text */
+    font-size: 15px;            /* Font size for the text */
+    color: #333;                /* Text color */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.values h2 {
+    text-decoration: underline;
+    text-decoration-color: #ff6a00 ;
+    font-size: 3em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1.5em;
+    margin-bottom: 0em;
+}
+
+.values h1 {
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.values p {
+    font-size: 1.3em;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+}
+
+.why {
+    color: #ff6a00;
+}
+
+.khushi {
+    color: #ff8c00;
+}
+.selection {
+    color: #333;
+    font-size: 1.4em;
+}
+/* Footer styling */
+footer {
+    display: grid;                                /* Use Grid layout */
+    grid-template-columns: repeat(4, 1fr);       /* 4 equal-width columns */
+    gap: 20px;                                    /* Space between columns */
+    padding: 20px;                                /* Padding around the footer */
+    background-color: #333;                       /* Background color of the footer */
+    color: white;                                 /* Text color */
+    font-family: 'Dancing Script', cursive; 
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.footer-section {
+    flex: 1;                              /* Make each section take equal space */
+    min-width: 200px;                     /* Ensure each section has a minimum width */
+    padding: 10px;                        /* Padding inside each section */
+}
+
+.footer-section h3 {
+    font-size: 18px;                      /* Title size */
+    margin-bottom: 10px;                  /* Margin below the title */
+    color:#ffff;
+    font-family: sans-serif;
+}
+
+.footer-section p {
+    font-size: 16px;                      /* Paragraph text size */
+    line-height: 1.6;                     /* Line height for better readability */
+    color: #ffffff; 
+    text-align: left; 
+    font-family: 'Times New Roman', Times, serif;                 
+}
+.location {
+    color: #ff8c00;
+}
+.policy {
+    color: #ff8c00;
+}
+.work {
+    color: #ff8c00;
+}
+.contact {
+    color: #ff8c00;
+}
+
+.phone-icon {
+  width: 25px;  /* Adjust the icon size */
+  height: 25px; /* Adjust the icon size */
+}
+.facebook-icon {
+  width: 25px;  /* Adjust the icon size */
+  height: 25px; /* Adjust the icon size */
+}
+.twiter-icon {
+  width: 25px;  /* Adjust the icon size */
+  height: 25px; /* Adjust the icon size */
+}
+.instargram-icon {
+  width: 25px;  /* Adjust the icon size */
+  height: 25px; /* Adjust the icon size */
+}
+.gmail-icon {
+    width: 25px;  /* Adjust the icon size */
+    height: 25px; /* Adjust the icon size */
+}
+.google-maps-icon {
+    width: 25px;
+    height: 25px;
+}
+.privacy-icon {
+    width: 25px;
+    height: 25px;
+}
+.social-icon {
+    width: 25px;
+    height: 25px;
+}
+.legal-icon {
+    width: 25px;
+    height: 25px;
+}
+.financial-icon {
+    width: 25px;
+    height: 25px;
+}
+.branch {
+    color: #ff8c00;
+}
+section {
+    display: flex;
+    justify-content:left; 
+    height: auto; 
+}
+section p {
+    width: 50%;
+    text-align: left;
+}
+
+section img {
+    width: 250px;
+    height: 250px;
+    margin-top: 2em;
+}
+header img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* This makes the image circular */
+    margin-top: 6em;
+    margin-bottom: 0.5em;
+}
+footer img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+}
+
+.google-reviews-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.google-reviews-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.google-reviews iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+.google-reviews {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.cookie-consent-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    height: 12em;
+    display: none ;/* Hide by default */
+}
+
+.cookie-consent-popup p {
+
+    color: #ddd;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}
+
+.cookie-consent-popup a {
+    color: #ffa600;
+    text-decoration: underline;
+}
+
+.accept-btn, .reject-btn {
+    margin: 60px;
+    padding: 8px 15px;
+    background-color: #ff8800;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+}
+
+.accept-btn:hover, .reject-btn:hover {
+    background-color: #e6b800;
+}
+.brands h2 {
+    font-family: cursive;
+    margin-top: 4em;
+}
+.image-link {
+    display: inline-block;  /* Ensure the link wraps around the image correctly */
+    text-decoration: none;  /* Remove any default link styling */
+}
+.developer img {
+    border-radius: 0%;
+    width: 350PX;
+    height: 106PX;
+    align-items: left;
+}
+.developer1 p {
+    font-family: 'Times New Roman', Times, serif;
+    color: #ff8800;
+    font-size: 1.0em;
+    letter-spacing: 10px;
+    font-weight: bold;
+}
+    </style>
+    <script>
+        // Example: Smooth Scroll on Button Click
+document.querySelector('.cta-button').addEventListener('click', function() {
+    window.scrollTo({
+        top: document.querySelector('.content').offsetTop,
+        behavior: 'smooth'
+    });
+});
+    
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#carinsurance">Car Insurance</a></li>
+            <li><a href="loginpagecar.html">Login</a></li>
+            <li><a href="#account">Account</a></li>
+        </ul>
+    </nav>
+    <!-- Main content -->
+    <header>
+        <h1>Welcome to <span class="khushi"> Khushi Motors </span> Dealership</h1>
+        <p>Your Dream Car Awaits</p>
+        <img src="image/logo.png" alt="">
+    </header>
+    <h1> <span class="drive"> Drive Your </span> Dream Car Today</h1>
+            <p class="half">
+                Welcome to Khushi Motors – Where Luxury Meets Affordability Looking for a car that perfectly matches your style and needs? Whether you're in the market for a sleek sedan, a rugged SUV, or the latest electric model, we have something just for you. At Khushi Motors, we offer unbeatable prices, exceptional customer service, and a seamless car-buying experience. Your perfect ride is just a visit away – come in and drive off today!
+            </p>   
+    
+    <div class="content">
+        <h3> <span class="featured">Featured </span> Cars For Sale</h3>
+        <p class="selection">
+             Selections taken from our stock list. Ask for financing options when you visit the nearest branch to you.
+        </p> 
+        <div class="image-container">
+            <div class="image-item" >
+                <img src="image/User Avatar.jpeg" alt="Image 1">
+                <p class="caption">Mercedes-AMG C-Class; Fuel Type: Petrol; Engine: 2300; Exterior: White </p>
+                <button class="cta-button">Ask Price</button> 
+            </div>
+            <div class="image-item">
+                <img src="image/audi.jpeg" alt="Image 2">
+                <p class="caption">Audi A7; Fuel Type: Petrol; Engine: 2300; Exterior: White </p>
+                <button class="cta-button">Ask Price</button>
+            </div>
+            <div class="image-item">
+                 <img src="image/Toyota_Prado.jpeg" alt="Image 3">
+                 <p class="caption"> Toyota Landcruser Prado; Fuel Type: Petrol; Engine: 2300; Exterior: White</p>
+                 <button class="cta-button">Ask Price</button>
+            </div> 
+            <div class="image-item">          
+                <img src="image/The Toyota Hilux.jpeg" alt="">
+                <p class="caption">Toyata Hilux; Fuel Type: Petrol; Engine: 2300; Exterior: White</p>
+                <button class="cta-button">Ask Price</button>
+                 <!-- Add more images as needed -->
+            </div>
+        </div>
+        <div class="image-container1">
+            <div class="image-item">
+                <img src="image/yaris.jpeg" alt="">
+                <p class="caption"> yaris; Fuel Type: Petrol; Engine: 2300; Exterior: White</p>
+                <button class="cta-button">Ask Price</button>
+            </div>
+            <div class="image-item">
+                <img src="image/2021 Mercedes-AMG GLE53 Coupe electrifies.jpeg" alt="">
+                <p class="caption">Mercedes-AMG Coupe; Fuel Type: Petrol; Engine: 2300; Exterior: White</p>
+                <button class="cta-button">Ask Price</button>
+            </div>
+            <div class="image-item">
+                <img src="image/6e4f4e09-6f64-4f96-aa24-0ebb84ddfac3.jpeg" alt="">
+                <p class="caption">Toyota Landcruser V8; Fuel Type: Petrol; Engine: 2300; Exterior: White</p>
+                <button class="cta-button">Ask Price</button>
+            </div>
+            <div class="image-item">
+                <img src="image/80c3bbcd-84a9-445f-b607-c3e2fe88bdb5.jpeg" alt="">
+                <p class="caption">VolksWagen Passat; Fuel Type: Petrol; Engine: 2300; Exterior: White</p>
+                <button class="cta-button">Ask Price</button>
+            </div>
+        </div>
+        <div class="image-container2" >
+            <div class="image-item">
+                <img src="image/8dd8a1e0-ef9c-47af-811e-483002c4ac79.jpeg" alt="">
+                <p class="caption">2025 RANGE ROVER SPORT; Fuel Type: Petrol; Engine: 2300; Exterior: White</p>
+                <button class="cta-button">Ask Price</button>
+            </div>
+            <div class="image-item">
+                <img src="image/1.jpeg" alt="">
+                <p class="caption">2025 RANGE ROVER VELAR; Fuel Type: Petrol; Engine: 2300; Exterior: White</p>
+                <button class="cta-button">Ask Price</button>
+            </div>
+            <div class="image-item">
+                <img src="image/OMG.jpeg" alt="">
+                <p class="caption"> Mercedes- G-Class SUV; Fuel Type: Petrol; Engine: 2300; Exterior: White</p>
+                <button class="cta-button">Ask Price</button>
+            </div>
+            <div class="image-item">
+                <img src="image/3.jpeg" alt="">
+                <p class="caption">Ford Truck UGC; Fuel Type: Petrol; Engine: 2300; Exterior: White</p>
+                <button class="cta-button">Ask Price</button>
+            </div>
+        </div>
+        <div class="brands">
+            <h2><span class="why"> Brands</span> In Stock</h2>
+        </div>
+        <div class="image-container5">
+            <div class="image-item2">
+                <a href="" class="image-link"><img src="image/icons/alfa.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/aston.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/bentley.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/bmw (1).png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/chevrolet.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/classic.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/dacia.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/ferrari.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/fiat.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/ford.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/gmc.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/honda.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/hyundai.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/isuzu.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/jaguar.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/jeep.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/land.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/lexus.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/mazda.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/mercedes (1).png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/mini.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/nissan.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/peugeot.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/porsche.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/proton.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/skoda.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/subaru.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/tesla.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/toyota (1).png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/volkswagen.png" alt=""></a>
+                <a href="" class="image-link"><img src="image/icons/volvo.png" alt=""></a>                
+
+            </div>
+
+        </div>
+        <div class="values">
+            <h2><span class="why">WHY </span>KHUSHI MOTORS</h2>
+            <h1>Customer-Focused <span class="why">Approach</span></h1>
+            <section>
+            <p>"Your satisfaction is our top priority. We listen carefully to understand your needs and provide personalized solutions."
+                "We’re not just here to sell products, we’re here to build long-term relationships with our clients."
+            </p>
+            <img src="image/Customer.jpeg" alt="">
+            </section>
+            <h1> Quality and <span class="why">Reliability</span></h1>
+            <section>
+                <img src="image/quality (1).jpeg" alt="">
+            <p> "We are committed to delivering only the best. Our products are carefully crafted using the finest materials and the latest technologies."
+                "You can count on us for timely delivery, top-notch quality, and consistent performance."
+            </p>
+            </section>
+            <h1>Trust and <span class="why">Integrity</span></h1>
+            <section>
+            <p>"Honesty and transparency are at the heart of everything we do. You can trust us to provide clear, straightforward advice and solutions."
+                "We take pride in building trust through ethical business practices and a commitment to excellence."
+            </p>
+            <img src="image/integrity.jpeg" alt="">
+            </section>
+            <h1>Local Expertise/<span class="why">Global Reach</span></h1>
+            <section>
+                <img src="image/global.jpeg" alt="">
+            <p>"Proudly serving [local community], while also providing global solutions to clients worldwide."
+                "Whether you're local or international, we have the knowledge and experience to support your goals."
+            </p>
+            </section>
+        </div>
+        <h2>Explore Our Cars</h2>
+        <button class="cta-button">Browse Cars</button>
+        <div class="google-reviews-container">
+            <h2>What Our Customers Are Saying</h2>
+            
+            <!-- Embed Google Reviews iframe -->
+            <div class="google-reviews">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32676182.74842859!2d-0.1203943000000173!3d-1.2997080999999837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f111f703d7323%3A0xe6c47f88e5410cbc!2sKhushi%20Motors%20Express%20Kenya!5e0!3m2!1sen!2ske!4v1735807020175!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+    </div>
+
+    <!-- Background image container -->
+    <div class="car-background">
+       <img src="image/Range.jpeg" alt="" >
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <h3><span class="contact">CON</span>TACTS</h3>
+            <p>
+                <img src="image/icons/whatsapp.png" alt="Phone Icon" class="phone-icon">
+                Phone: +254708038090 & +254110565273
+            </p>
+            <p>
+                <img src="image/icons/gmail.png" alt="Phone Icon" class="gmail-icon">
+                Email: khushimotors@yahoo.com
+            </p>
+            <p>
+                <img src="image/icons/facebook.png" alt="Phone Icon" class="facebook-icon">
+                facebook@khushimotors.com
+            </p>
+            <p>
+                <img src="image/icons/instagram.png" alt="Phone Icon" class="instargram-icon">
+                instagram@khushimotors.com
+            </p>
+            <p>
+                <img src="image/icons/twitter.png" alt="Phone Icon" class="twiter-icon">
+                x@khushimotorsbravo.com
+            </p>
+        </div>
+        <div class="footer-section">
+            <h3><span class="location">LOC</span>ATIONS</h3>
+            <p><span class="branch">Main Branch </span></p>
+            <p>
+                <img src="image/icons/google-maps.png" alt="Phone Icon" class="google-maps-icon">
+                Dedan Kimathi Avenue,
+            </p>
+            <p>Mikindani Road Mombasa,</p>
+            <p >KENYA.</p>
+            <p><span class="branch">Other Branches</span></p>
+            <p>
+                <img src="image/icons/google-maps.png" alt="Phone Icon" class="google-maps-icon">
+                Mama Ngina Drive,
+            </p>
+            <p>Mombasa,KENYA.</p>
+        </div>
+        <div class="footer-section">
+            <h3><span class="policy">POL</span>ICIES</h3>
+            <p>
+                <img src="image/icons/privacy.png" alt="Phone Icon" class="privacy-icon">
+                Privacy Policy
+            </p>
+            <p>
+                <img src="image/icons/compliant.png" alt="Phone Icon" class="legal-icon">
+                Legal Policy
+            </p>
+            <p>
+                <img src="image/icons/saving.png" alt="Phone Icon" class="financial-icon">
+                Financial Policy
+            </p>
+            <p>
+                <img src="image/icons/family-insurance.png" alt="Phone Icon" class="social-icon">
+                Social Policy
+            </p>
+        </div>
+        <div class="footer-section">
+            <h3><span class="work">WORK</span>ING HOURS</h3>
+            <p><span class="branch">Monday - Friday</span> </p>
+            <p>0800hrs - 1700hrs EAT </p>
+            <p><span class="branch">Saturday</span></p>
+            <p>1000hrs - 1500hrs EAT</p>
+        </div>
+        <div class="imglogo">
+            <img src="image/logo.png" alt=""> 
+        </div>
+        <div class="footer-section">
+        <p>&copy; 2025 Khushi Motors. All rights reserved. <a href="/terms-of-use">Terms of Use</a> | <a href="/privacy-policy">Privacy Policy</a></p>
+        </div>
+        <div class="developer1">
+            <p> DEVELOPED BY:</p>
+        </div>
+        <div class="developer">
+            <img src="image/icons/CODEXPLORER (2).png" alt="developer">
+        </div>
+       
+    </footer>
+    <div id="cookieConsent" class="cookie-consent-popup">
+        <div class="cookie-consent-content">
+            <p>"We use cookies to improve your experience on our site. By continuing to browse, you agree to the use of cookies for analytics, personalization, and advertising you give your consent to the use of cookies as per our privacy." <a href="/cookie-policy">Learn more</a></p>
+            <a href="homepagecar.html"><button id="acceptCookies" class="accept-btn">Accept</button></a>
+            <a href="homepagecar.html"><button id="rejectCookies" class="reject-btn">Reject</button></a>
+        </div>
+    </div>          
+    <script src="script.js">
+        
+      // Function to get a cookie by name
+      function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Check if the user has already accepted cookies
+        if (!getCookie('cookieConsent')) {
+            // If the cookieConsent cookie isn't found, show the popup
+            document.getElementById('cookieConsent').style.display = 'block';
+        } else {
+            // If the cookieConsent cookie exists, hide the popup
+            document.getElementById('cookieConsent').style.display = 'none';
+        }
+
+        // Handle the Accept button click
+        document.getElementById('acceptCookies').addEventListener('click', function() {
+            // Set the cookie to remember the user's consent
+            document.cookie = "cookieConsent=accepted; path=/; expires=" + new Date(2025, 0, 3).toUTCString();
+            // Hide the popup
+            document.getElementById('cookieConsent').style.display = 'none';
+        });
+        
+    </script>
+</body>
+</html>
