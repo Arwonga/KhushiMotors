@@ -4,7 +4,7 @@ Whether you're looking to purchase your dream car or find the best deals on pre-
 <h1>About Khushi Motors</h1>
 Khushi Motors is a trusted name in the car sales industry in Kenya. We specialize in importing high-quality vehicles from both local and international markets. Our goal is to provide Kenyan car enthusiasts with an extensive range of both brand-new and second-hand vehicles, all at competitive prices.
 With a user-friendly website interface, customers can browse through various car models, explore pricing options, and get detailed information about each vehicle. We also offer secure online payment options and delivery services across Kenya.
-<h1></h1>Features</h1>
+<h1>Features</h1>
 Car Listings: Browse through a wide range of vehicles (new and second-hand) available for sale, each with detailed information including price, specifications, and images.
 Filter & Search: Advanced search and filter options to find cars by make, model, price range, and more.
 Vehicle Details: Detailed pages for each car with comprehensive descriptions, photos, and pricing.
