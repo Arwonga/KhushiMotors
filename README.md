@@ -12,5 +12,5 @@ User Accounts: Ability for users to create accounts to save their favorite cars 
 Contact Us: Easily get in touch with the Khushi Motors team for any questions or support.
 Secure Payments: Integration with payment gateways for a secure and easy transaction experience.
 <h>Acknowledgments</h1>
-Thanks to the React team for providing an excellent JavaScript library for building user interfaces.
+Thanks to the React team for providing an excellent JavaScript library for building user interfaces
 Thanks to all the contributors who help make this project better!
